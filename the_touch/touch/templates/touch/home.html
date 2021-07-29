@@ -1,0 +1,96 @@
+{% extends 'touch/base.html' %}
+
+{% block contents %}
+
+    <h1 id="home">Home page</h1>
+
+    <!--Latest Post Start Here-->
+         <div class="container">
+            <div class="col-md-6 border mb-3">
+                <h1>latest post</h1>
+                {% comment %} <h5>published by {{latest_post.user}} on {{latest_post.publish|date:"F d, Y"}}</h5> {% endcomment %}
+                
+                <!--tag starts here-->
+                {% for tag in latest_post.tags.all %}
+                    <a href="{% url "touch:tagged" tag.slug %}">tag: {{tag}}</a>
+                    
+                    {% if not forloop.last %}
+                        ,
+                    {% endif %}
+                        
+                {% endfor %}
+                <!--tag ends here-->
+                
+                <h4><a href="{{latest_post.get_absolute_url}}">title: {{latest_post.title}}</a></h4>   
+                <a href="{{latest_post.get_absolute_url}}">{{latest_post.body|truncatewords_html:15|safe}}</a>
+                 {% if latest_post.body|wordcount > 15 %}
+                    <a style="text-decoration:none" href="{{latest_post.get_absolute_url}}">read more</a>
+                {% endif %}
+                <h5>Written by {{latest_post.author}}</h5>
+                <h5>Graphics by {{latest_post.graphics}}</h5>
+            </div>
+        </div>
+    <!--Latest Post End Here-->
+
+    {% for post in object  %}
+
+        <div class="container">
+            <div class="col-md-6 border">
+                {% comment %} <h5>published by {{post.user}} on {{post.publish|date:"F d, Y"}}</h5> {% endcomment %}
+                
+                <!--tag starts here-->
+                {% for tag in post.tags.all %}
+                    <a href="{% url "touch:tagged" tag.slug %}">tag: {{tag}}</a>
+                    
+                    {% if not forloop.last %}
+                        ,
+                    {% endif %}
+                        
+                {% endfor %}
+                <!--tag ends here-->
+                
+                <a href="{{post.get_absolute_url}}">{{post.title}}</a>   
+                <a href="{{post.get_absolute_url}}">{{post.body|truncatewords_html:15|safe}}</a>
+                {% if post.body|wordcount > 15 %}
+                    <a style="text-decoration:none" href="{{post.get_absolute_url}}">read more</a>
+                {% endif %}
+                <h5>Written by {{post.author}}</h5>
+                <h5>Graphics by {{post.graphics}}</h5>
+            </div>
+        </div>
+        
+    {% endfor %}
+
+
+    <!--Side Bar-->
+    <h1>Side Bar</h1>
+    {% for post in object2  %}
+
+        <div class="container">
+            <div class="col-md-6 border mt-3">
+                {% comment %} <h5>published by {{post.author}} on {{post.publish|date:"F d, Y"}}</h5> {% endcomment %}
+                
+                <!--tag starts here-->
+                {% for tag in post.tags.all %}
+                    <a href="{% url "touch:tagged" tag.slug %}">tag: {{tag}}</a>
+                    
+                    {% if not forloop.last %}
+                        ,
+                    {% endif %}
+                        
+                {% endfor %}
+                <!--tag ends here-->
+                
+                <a href="{{post.get_absolute_url}}">{{post.title}}</a>   
+                <a href="{{post.get_absolute_url}}">{{post.body|truncatewords_html:15|safe}}</a>
+                {% if post.body|wordcount > 15 %}
+                    <a style="text-decoration:none" href="{{post.get_absolute_url}}">read more</a>
+                {% endif %}
+            </div>
+        </div>
+        
+    {% endfor %}
+
+{% endblock contents %}
+
+

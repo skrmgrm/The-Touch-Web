@@ -1,0 +1,85 @@
+{% comment %} {% load static %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="{% url 'touch:home' %}"><img src="{% static 'images/logo2.png' %}" width="35" height="35" alt=""></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+       <li class="nav-item active">
+        <a class="nav-link" href="{% url 'touch:home' %}">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{% url 'touch:home' %}"><img src="{% static 'images/logo2.png' %}" width="35" height="35" alt=""></a>
+      </li>
+
+       <li class="nav-item">
+        <a class="nav-link" href="{% url 'touch:about' %}">About</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="{% url 'touch:contact' %}">Contact</a>
+      </li>
+
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav> {% endcomment %}
+
+<header class="header">
+  <div class="header__showcase">
+    <div class="header__logo">
+      
+      <a href="{% url 'touch:home' %}"><img
+        src="https://scontent.fceb1-2.fna.fbcdn.net/v/t1.15752-9/s2048x2048/211261141_846999056251215_5080077493239074084_n.png?_nc_cat=100&ccb=1-3&_nc_sid=ae9488&_nc_eui2=AeGqaCrRgo5GxOd6jfAPM53FDu24CTpQq0gO7bgJOlCrSFjHMM47jlz2ys2TSv5rQ7NvgdhNs6ermZY4E2AExuQ5&_nc_ohc=BcJ48cXEGCUAX9flnQC&_nc_ht=scontent.fceb1-2.fna&oh=0f473884ecabd910745ea71bd916ddbf&oe=6128F7EA"
+        alt="logo"
+      />
+      </a>
+    </div>
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__list__item">
+          <a href="{% url 'touch:home' %}" class="nav__list__item__link">Home</a>
+        </li>
+        <li class="nav__list__item">
+          <a href="{% url 'touch:about' %}" class="nav__list__item__link">About</a>
+        </li>
+        <li class="nav__list__item">
+          <a href="{% url 'touch:contact' %} " class="nav__list__item__link">Contact</a>
+        </li>
+      </ul>
+    </nav>
+    <nav class="socials">
+      <ul class="socials__list">
+        <li class="socials__list__icon">
+          <a href="#" class="socials__list__icon__link">
+            <i class="fab fa-facebook"></i>
+          </a>
+        </li>
+        <li class="socials__list__icon">
+          <a href="#" class="socials__list__icon__link">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </li>
+        <li class="socials__list__icon">
+          <a href="#" class="socials__list__icon__link">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="menu">  
+        <i class="menu-icon fas fa-bars"></i>
+    </div>
+  </div>
+</div>
+</header>
+<div class="header__banner">
+ 
+  <img
+    src="https://scontent.fceb1-3.fna.fbcdn.net/v/t1.15752-9/218094549_1051812662231863_8945084406813177322_n.jpg?_nc_cat=103&ccb=1-3&_nc_sid=ae9488&_nc_eui2=AeHutMRkJU_7EJiAWh5FCOE_kJ8x72C0qhqQnzHvYLSqGkloaCtPUJW0tCYLwSQifmXBY1iLuam68OZcKwcs1RRI&_nc_ohc=u90DcGyf7DMAX_JD3Kd&_nc_ht=scontent.fceb1-3.fna&oh=a8dc2b33324fd37fa3c014e6d4abf91c&oe=612659CC"
+    alt="banner"
+  />
+
