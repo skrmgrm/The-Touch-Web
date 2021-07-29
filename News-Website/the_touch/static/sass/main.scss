@@ -1,0 +1,19 @@
+@import "config";
+@import "header";
+@import "variables";
+@import "header";
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: set-text-color($secondary-color);
+}
+
+body {
+  background: $primary-color;
+}
+
+@import "responsive";

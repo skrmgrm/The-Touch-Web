@@ -1,0 +1,13 @@
+{% extends 'touch/base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block contents %}
+
+    <form action="" method="POST">{% csrf_token %}
+        {{form.media}}
+        {{form|crispy}}
+        <button class="btn btn-outline-info mb-3" type="submit">Post</button>
+    </form>
+
+{% endblock contents %}

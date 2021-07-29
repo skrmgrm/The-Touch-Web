@@ -1,0 +1,125 @@
+@import "variables";
+
+.header {
+  @include flex(column);
+  width: 100%;
+  height: auto;
+  position: sticky;
+  top: 0;
+  background-color: $secondary-color;
+  z-index: 1;
+
+  &__showcase {
+    @include flex(row);
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    width: 80%;
+    height: 70px;
+  }
+
+  &__logo {
+    width: 50px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .nav {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: darken($secondary-color, 5%);
+    opacity: 0.9;
+    z-index: 2;
+    transform: translate(100%);
+    @include transition-ease;
+
+    &__list {
+      @include flex(column);
+      justify-content: flex-start;
+      height: 80%;
+      width: 100%;
+      padding-top: 5rem;
+
+      &__item {
+        @include flex(column);
+        padding: 2.5rem 0;
+        width: 100%;
+        cursor: pointer;
+
+        &:hover {
+          background-color: lighten($secondary-color, 10%);
+          color: set-text-color(lighten($secondary-color, 10%));
+        }
+
+        &__link:hover {
+          @include transform-hover;
+        }
+        &__link:active {
+          @include tranform-active;
+        }
+      }
+    }
+  }
+
+  .socials {
+    width: 100%;
+    padding-bottom: 2rem;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    transform: translate(100%);
+    @include transition-ease;
+
+    &__list {
+      @include flex(row);
+      gap: 2rem;
+      &__icon {
+        &__link {
+          font-size: 2rem;
+          i:hover {
+            @include transform-hover;
+            &:active {
+              @include tranform-active;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .nav.active,
+  .socials.active {
+    @include flex(column);
+    justify-content: flex-start;
+    transform: translate(0);
+  }
+
+  .menu {
+    position: absolute;
+    right: 2rem;
+    font-size: 2rem;
+    color: set-text-color($secondary-color);
+    cursor: pointer;
+    z-index: 3;
+    transform: rotate(180deg);
+    @include transition-ease;
+
+    &:active {
+      transform: scale(1.2);
+    }
+  }
+
+  &__banner {
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
+}
