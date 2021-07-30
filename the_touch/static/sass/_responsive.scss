@@ -48,15 +48,17 @@
       padding: 0 !important;
       width: 100% !important;
       gap: 1.5rem !important;
-
+      justify-content: flex-end !important;
       &__item {
         padding: 0 !important;
       }
     }
   }
-
+  .header__showcase {
+    width: 80% !important;
+  }
   .showcase {
-    width: 80%;
+    width: 80% !important;
     margin: 1rem auto;
   }
 
