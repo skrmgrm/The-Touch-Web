@@ -353,6 +353,19 @@ body {
   .main__previous-post {
     width: 49%;
   }
+
+  .sidebar {
+    position: sticky;
+    bottom: -4%;
+    left: 100%;
+    width: 28%;
+    height: 95vh;
+    overflow-y: scroll;
+  }
+  .sidebar__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 li {
   list-style-type: none;
@@ -370,6 +383,28 @@ a {
 .showcase {
   width: 95%;
   margin: 1rem auto;
+}
+
+.sidebar a {
+  height: auto;
+  width: 100%;
+}
+.sidebar a p {
+  height: auto;
+  width: 100%;
+}
+.sidebar a p img {
+  height: auto !important;
+  width: 100% !important;
+}
+.sidebar h1,
+.sidebar h2,
+.sidebar h3,
+.sidebar h4,
+.sidebar h5,
+.sidebar h6,
+.sidebar a {
+  color: #000;
 }
 
 .main__latest-post {

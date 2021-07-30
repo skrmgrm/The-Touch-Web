@@ -21,6 +21,33 @@ a {
   margin: 1rem auto;
 }
 
+.sidebar {
+  a {
+    height: auto;
+    width: 100%;
+
+    p {
+      height: auto;
+      width: 100%;
+
+      img {
+        height: auto !important;
+        width: 100% !important;
+      }
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  a {
+    color: set-text-color($primary-color);
+  }
+}
+
 .main {
   &__latest-post {
     @include flex(column);
