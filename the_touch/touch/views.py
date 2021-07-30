@@ -11,8 +11,8 @@ from django.views.generic.edit import CreateView
 
 def home(request, tag_slug=None):
     # object_list = Post.published.all()
-    object_list = Post.published.all().exclude()[1:12]
-    object_list2 = Post.published.all().exclude()[12:]
+    object_list = Post.published.all().exclude()[1:15]
+    object_list2 = Post.published.all().exclude()[15:]
 
     # tags
     # tag = None

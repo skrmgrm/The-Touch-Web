@@ -17,11 +17,17 @@ a {
 }
 
 .showcase {
-  width: 95%;
+  width: 80%;
   margin: 1rem auto;
 }
 
 .sidebar {
+  &__content {
+    padding: 0.5rem 0;
+    &:hover {
+      @include transform-hover;
+    }
+  }
   a {
     height: auto;
     width: 100%;
@@ -33,6 +39,10 @@ a {
       img {
         height: auto !important;
         width: 100% !important;
+      }
+
+      &:nth-child(1) {
+        color: $primary-color;
       }
     }
   }
@@ -66,7 +76,7 @@ a {
 
     &:hover {
       cursor: pointer;
-      transform: scale(1.01);
+      @include transform-hover;
     }
   }
 
@@ -119,7 +129,7 @@ a {
 
     &:hover {
       cursor: pointer;
-      transform: scale(1.05);
+      @include transform-hover;
     }
   }
 }

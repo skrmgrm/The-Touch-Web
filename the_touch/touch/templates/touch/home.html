@@ -65,8 +65,10 @@
   <div class="sidebar__content">
     <div class="sidebar__content-text">
       <a href="{{post.get_absolute_url}}">{{post.title}}</a>
-      <h5>{{post.author}}</h5>
-      <h5>{{post.publish|date:"F d, Y"}}</h5>
+      <div>
+        <h5>{{post.author}}</h5>
+        <h5>{{post.publish|date:"F d, Y"}}</h5>
+      </div>
     </div>
     <div class="sidebar__content-img">
       <a class="sidebar__content-img__content" href="{{post.get_absolute_url}}"
@@ -74,7 +76,6 @@
       >
     </div>
   </div>
-
   {% endfor %}
 </div>
 

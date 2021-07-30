@@ -1,4 +1,6 @@
 @include media-md {
+}
+@include media-lg {
   .menu {
     visibility: hidden;
   }
@@ -84,19 +86,32 @@
 
   .sidebar {
     position: sticky;
-    bottom: -4%;
+    bottom: 0;
     left: 100%;
     width: 28%;
-    height: 95vh;
+    height: 92vh;
     overflow-y: scroll;
 
     &__content {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
+
+      &-text {
+        @include flex(column);
+        justify-content: center;
+        align-items: flex-start;
+
+        a {
+          font-weight: weight(semi-bold);
+          padding-bottom: 0.5rem;
+        }
+
+        h5 {
+          font-weight: weight(regular);
+        }
+      }
     }
   }
-}
-@include media-lg {
 }
 @include media-xl {
 }
