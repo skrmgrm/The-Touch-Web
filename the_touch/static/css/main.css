@@ -396,6 +396,18 @@ body {
     height: 92vh;
     overflow-y: scroll;
   }
+  .sidebar::-webkit-scrollbar-thumb {
+    background-color: #2a2a2a;
+    /* color of the scroll thumb */
+    border-radius: 5px;
+    /* roundness of the scroll thumb */
+  }
+  .sidebar::-webkit-scrollbar {
+    background-color: #6a1302;
+  }
+  .sidebar::-webkit-scrollbar-track {
+    background: #6a1302;
+  }
   .sidebar__content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

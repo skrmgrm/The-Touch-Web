@@ -92,6 +92,19 @@
     height: 92vh;
     overflow-y: scroll;
 
+    &::-webkit-scrollbar-thumb {
+      background-color: rgb(42, 42, 42); /* color of the scroll thumb */
+      border-radius: 5px; /* roundness of the scroll thumb */
+    }
+
+    &::-webkit-scrollbar {
+      background-color: $secondary-color;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: $secondary-color;
+    }
+
     &__content {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
