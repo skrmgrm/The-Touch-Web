@@ -2,18 +2,114 @@
 @import "header";
 @import "variables";
 @import "header";
+@import "responsive";
 
 li {
   list-style-type: none;
 }
 
-a {
-  text-decoration: none;
-  color: set-text-color($secondary-color);
-}
-
 body {
+  min-height: 100vh;
   background: $primary-color;
 }
+a {
+  text-decoration: none;
+}
 
-@import "responsive";
+.showcase {
+  width: 95%;
+  margin: 1rem auto;
+}
+
+.main {
+  &__latest-post {
+    @include flex(column);
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    &__title {
+      padding-bottom: 1rem;
+
+      a {
+        font-weight: weight(bold);
+        font-size: 2.5rem;
+        color: darken($secondary-color, 10%) !important;
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.01);
+    }
+  }
+
+  &__author,
+  &__graphics {
+    font-size: 1rem;
+    font-weight: weight(semi-bold);
+  }
+
+  &__author {
+    margin: 1rem 0 0 0;
+  }
+
+  a {
+    p {
+      font-size: 1.2rem;
+    }
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  a {
+    color: set-text-color($primary-color);
+  }
+
+  a {
+    height: auto;
+    width: 100%;
+
+    p {
+      height: auto;
+      width: 100%;
+
+      img {
+        height: auto !important;
+        width: 100% !important;
+      }
+    }
+  }
+
+  &__previous-post-container {
+    padding-top: 2rem;
+  }
+
+  &__previous-post {
+    margin: 0.5rem 0;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+  }
+}
+
+.read-more {
+  color: $secondary-color;
+  font-weight: weight(bold);
+}
+
+.read-more:hover {
+  color: lighten($secondary-color, 10%);
+  font-weight: weight(bold);
+}
+
+footer {
+  margin-top: auto;
+  width: 100%;
+  height: 50px;
+  background-color: $secondary-color;
+}

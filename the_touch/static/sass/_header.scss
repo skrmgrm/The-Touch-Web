@@ -122,4 +122,8 @@
       width: 100%;
     }
   }
+
+  a {
+    color: set-text-color($secondary-color);
+  }
 }

@@ -2,65 +2,56 @@
 
 {% block contents %}
 
-    <h1 id="home">Home page</h1>
+
 
     <!--Latest Post Start Here-->
-         <div class="container">
-            <div class="col-md-6 border mb-3">
-                <h1>latest post</h1>
-                {% comment %} <h5>published by {{latest_post.user}} on {{latest_post.publish|date:"F d, Y"}}</h5> {% endcomment %}
-                
-                <!--tag starts here-->
-                {% for tag in latest_post.tags.all %}
-                    <a href="{% url "touch:tagged" tag.slug %}">tag: {{tag}}</a>
-                    
-                    {% if not forloop.last %}
-                        ,
-                    {% endif %}
-                        
-                {% endfor %}
-                <!--tag ends here-->
-                
-                <h4><a href="{{latest_post.get_absolute_url}}">title: {{latest_post.title}}</a></h4>   
+         <div class="main">
+
+            <div class="main__latest-post">
+      
+               <h5 class="main__latest-post__date">{{latest_post.publish|date:"F d, Y"}}</h5> 
+
+                <!-- title -->
+                <h4 class="main__latest-post__title"><a href="{{latest_post.get_absolute_url}}"> {{latest_post.title}}</a></h4>   
+                <!-- title -->
+
                 <a href="{{latest_post.get_absolute_url}}">{{latest_post.body|truncatewords_html:15|safe}}</a>
                  {% if latest_post.body|wordcount > 15 %}
-                    <a style="text-decoration:none" href="{{latest_post.get_absolute_url}}">read more</a>
+                    <a style="text-decoration:none" href="{{latest_post.get_absolute_url}}"> <span class="read-more"> Read more</span> </a>
                 {% endif %}
-                <h5>Written by {{latest_post.author}}</h5>
-                <h5>Graphics by {{latest_post.graphics}}</h5>
+                <h5 class=main__latest-post__author>Written by {{latest_post.author}}</h5>
+                <h5 class="main__latest-post__graphics">Graphics by {{latest_post.graphics}}</h5>
             </div>
-        </div>
+        
     <!--Latest Post End Here-->
-
+    
+    
+    
+    <div class="main__previous-post-container">
     {% for post in object  %}
 
-        <div class="container">
-            <div class="col-md-6 border">
-                {% comment %} <h5>published by {{post.user}} on {{post.publish|date:"F d, Y"}}</h5> {% endcomment %}
+        <div class="main__previous-post">
+            
+                <h5 class="main__previous-post__date">{{post.publish|date:"F d, Y"}}</h5>
                 
-                <!--tag starts here-->
-                {% for tag in post.tags.all %}
-                    <a href="{% url "touch:tagged" tag.slug %}">tag: {{tag}}</a>
-                    
-                    {% if not forloop.last %}
-                        ,
-                    {% endif %}
-                        
-                {% endfor %}
-                <!--tag ends here-->
-                
-                <a href="{{post.get_absolute_url}}">{{post.title}}</a>   
+                <a class="main__previous-post__title" href="{{post.get_absolute_url}}">{{post.title}}</a>  
+
                 <a href="{{post.get_absolute_url}}">{{post.body|truncatewords_html:15|safe}}</a>
                 {% if post.body|wordcount > 15 %}
-                    <a style="text-decoration:none" href="{{post.get_absolute_url}}">read more</a>
+                    <a style="text-decoration:none" href="{{post.get_absolute_url}}"><span class="read-more"> Read more</span></a>
                 {% endif %}
-                <h5>Written by {{post.author}}</h5>
-                <h5>Graphics by {{post.graphics}}</h5>
-            </div>
-        </div>
-        
-    {% endfor %}
 
+
+                <h5 class="main__previous-post__author">Written by {{post.author}}</h5>
+                <h5 class="main__previous-post__graphics">Graphics by {{post.graphics}}</h5>
+            
+            
+        </div>
+    
+    {% endfor %}
+    </div>  
+        
+     </div>
 
     <!--Side Bar-->
     <h1>Side Bar</h1>

@@ -21,6 +21,9 @@
     <title>The Touch</title>
   </head>
   <body>
-    {% include 'touch/navbar.html' %}{% block contents %}{% endblock contents %}
+    {% include 'touch/navbar.html' %}
+    <div class="showcase">{% block contents %}{% endblock contents %}</div>
+
+    <footer></footer>
   </body>
 </html>
